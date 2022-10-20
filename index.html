@@ -1,8 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6cf9e378e7.js" crossorigin="anonymous"></script>
+    <title>Driftskalkulator</title>
+    <style>
+        *{
+    font-family: sans-serif;
+}
+.vindu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #001f2b;
+}
+.topnav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4rem;
+    width: 100%;
+    background-color: #2bc12b;
+    display: grid;
+    grid-template-columns: auto 3rem;
+    justify-content: space-between;
+}
+.topnav > h1{
+    margin: 1rem;
+}
+#bars{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+#bars:hover{
+    background-color: #1c811c;
+}
+.valg{
+    display: none;
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #1c811c;
+}
+.kalkulator{
+    width: 60%;
+}
+.kalkulator > form{
+    position: absolute;
+    top: 7rem;
+    left: 2rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
+}
+.textbox{
+    height: 3rem;
+    width: 20rem;
+    font-size: 2rem;
+}
+select{
+    height: 2rem;
+    width: 10rem;
+}
+.tillegg{
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    color: white;
+}
+.tillegg > form{
+    margin-bottom: 0.5rem;
+}
+
+
+.skille{
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    height: 89%;
+    width: .5%;
+    background-color: white;
+    opacity: 0.1;
+}
+.svar{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 39.5%;
+    text-align: center;
+    color: white;
+}
+.svar > h1{
+    font-size: 7rem;
+}
+.svar > h3{
+    font-size: 4rem;
+    margin-top: 40%;
+}
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>Halla balla</p>
+    <div class="vindu">
+        <div class="topnav">
+            <h1>Driftskalkulator</h1>
+            <i class="fa-regular fa-bars fa-2xl" id="bars"></i>
+            <div class="barbg" onClick="bars()"></div>
+        </div>
+        <div class="kalkulator">
+            <form >
+                <input type="text" placeholder="Placeholder" class="textbox">
+                <input type="text" placeholder="Placeholder" class="textbox">
+                <input type="text" placeholder="Placeholder" class="textbox">
+                <input type="text" placeholder="Placeholder" class="textbox">
+            </form>
+            <div class="tillegg">
+                <h1>Tillegg</h1>
+                <form>
+                    <input type="checkbox" name="1">
+                    <label for="1"> Placeholder</label><br>
+                    <input type="checkbox" name="2">
+                    <label for="2"> Placeholder</label><br>
+                    <input type="checkbox" name="3">
+                    <label for="3"> Placeholder</label><br>
+                    
+                    <select name="cars" id="sesong">
+                        <option>Placeholder</option>
+                        <option>Sesong</option>
+                        <option>Sommer</option>
+                        <option>Vinter</option>
+                    </select>
+                </form>
+            </div>
+            <div class="skille"></div>
+            <div class="svar">
+                <h3>Pris:</h3>
+                <h1>420,-</h1>
+            </div>
+        </div>
+        <div class="oppdater">
+            
+        </div>
+        <div class="valg" id="valg">
+            <h2>Beregn pris</h2>
+            <h2>Oppdater</h2>
+        </div>
+    </div>
+    <script>
+        let trykk = 1;
+        function bars(){
+            trykk+=1;
+            if (trykk % 2 === 1) {
+                document.getElementById("valg").style.display = "block";
+            }
+            else{
+                document.getElementById("valg").style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
